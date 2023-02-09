@@ -1,0 +1,36 @@
+#include <stdio.h>
+#include <locale.h>
+#include <stdlib.h>
+
+
+int fib(int M);
+
+int main(){
+	int N, R;
+	
+	setlocale(LC_ALL,"portuguese_brazil");
+	
+	scanf ("%d", &N);
+	
+	for (int J = 1; J <= N; J++){
+		R = fib(J);
+		printf("%d ", R);
+	}
+	return 0;
+}
+
+int fib(int M){
+	int R;
+	
+	if(M == 1){
+		return 1;
+	}
+	
+	if(M == 2){
+		return 1;
+	}
+	
+	R = fib(M-1) + fib(M-2);
+	
+	return R;
+}
